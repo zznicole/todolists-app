@@ -111,3 +111,7 @@ input {
 .addBtn:hover {
   background-color: #bbb;
 }
+
+#searchInput {
+  margin-top: 1em;
+}
