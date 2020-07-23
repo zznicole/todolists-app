@@ -166,4 +166,14 @@ class Todos{
   }
   
   myFunction();
+
+// remove duplicates todos
+
+let todosArr = newtodo.todo.map(x => x.name);
+
+  function removeDuplicates(arr) {
+    let uniqueArr = [...new Set(arr)];
+    return uniqueArr;
+  }
   
+  alert(removeDuplicates(todosArr));
