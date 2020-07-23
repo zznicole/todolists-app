@@ -4,18 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>todolists-app</title>
-  <link rel="stylesheet" href="index.css">
+  <!--<link rel="stylesheet" href="index.css">-->
+  <link rel="stylesheet" href="test-index.css">
 </head>
 <body>
-  <div id="myDIV" class="header">
+  <!--<div id="myDIV" class="header">
     <h2>My To Do List</h2>
     <input type="text" id="myInput" placeholder="Title...">
     <span onclick="newElement()" class="addBtn">Add</span>
     <input type="text" id="searchInput" onkeyup="myFunction()" placeholder="Search for to do task..">
   </div>
-  
   <ul id="myUL">
   </ul>
-  <script src="script.js"></script>
+  <div class="counter-container">
+    <p>Todo tasks left to complete:</p>
+    <div><span class="items-left">0</span><span class="items-text">Items left</span></div>
+  </div>-->
+  
+  
+
+
+
+  <div class="wrapper">
+    <h1 class="hero-text">Todo List</h1>
+    <div class="input-container">
+      <input class="main_input" placeholder="Add a todo task">
+      <hr>
+      <input type="text" id="searchInput" class="search-box" onkeyup="myFunction()" placeholder="Search for todo task..">
+    </div>
+    <ul class="ul">
+    </ul>
+    <div class="details-box">
+      <div><span class="items-left">0</span><span class="items-text">Items left</span></div>
+    </div>
+    
+  </div>
+  <!--<script src="script.js"></script>-->
+  <script src="test-script.js"></script>
 </body>
 </html>
