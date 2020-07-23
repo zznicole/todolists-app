@@ -169,11 +169,11 @@ class Todos{
 
 // remove duplicates todos
 
-let todosArr = newtodo.todo.map(x => x.name);
+let todosArr = newtodo.todo.map(x => x.name.toLowerCase());
 
   function removeDuplicates(arr) {
     let uniqueArr = [...new Set(arr)];
     return uniqueArr;
   }
   
-  alert(removeDuplicates(todosArr));
+removeDuplicates(todosArr);
