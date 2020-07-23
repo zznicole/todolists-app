@@ -7,6 +7,11 @@ const completed = document.querySelector('.completed');
 const selectAll = document.querySelector('.far');
 let switchIt = false;
 
+function randomGen(str = 'qwertyuio') {
+  return str.split('')
+    .sort(() => Math.random() - 0.5)
+    .join('') + '_' + Math.floor(Math.random() * 1000)
+}
 
 class Todos{
   constructor(){
@@ -16,6 +21,7 @@ class Todos{
       this.todo = this.todo.concat({
       name: mainInput.value,
       completed: false,
+      id: randomGen()
       })
     }
 
@@ -23,23 +29,23 @@ class Todos{
     render(parent){
       ul.innerHTML = '';
       this.todo.forEach(t =>{
-        let li =document.createElement('li');
-        li.classList.add('li');
-        let p = document.createElement('p');
-        p.classList.add('para-1')
-        p.textContent = t.name;
-        let input = document.createElement('input');
-        input.setAttribute('type','checkbox');
-        input.checked = t.completed;
-        input.checked ? p.style.textDecorationLine = 'line-through': p.style.textDecorationLine = 'none';
-        input.setAttribute('data-key',t.id)
-        input.classList.add('status');
-        let deleteit = document.createElement('button');
-        deleteit.setAttribute('data-key',t.id)
-        deleteit.classList.add('deleteit');
-        deleteit.textContent = 'X'
-        li.append(input,p,deleteit);
-        parent.append(li);
+      let li =document.createElement('li');
+      li.classList.add('li');
+      let p = document.createElement('p');
+      p.classList.add('para-1')
+      p.textContent = t.name;
+      let input = document.createElement('input');
+      input.setAttribute('type','checkbox');
+      input.checked = t.completed;
+      input.checked ? p.style.textDecorationLine = 'line-through': p.style.textDecorationLine = 'none';
+      input.setAttribute('data-key',t.id)
+      input.classList.add('status');
+      let deleteit = document.createElement('button');
+      deleteit.setAttribute('data-key',t.id)
+      deleteit.classList.add('deleteit');
+      deleteit.textContent = 'X'
+      li.append(input,p,deleteit);
+      parent.append(li);
 
 
 
@@ -126,28 +132,6 @@ class Todos{
   
   //completed adding todo by enter
 
-  //selectAll icon functionality
-  const selectAllFunc = function(){
-    if(switchIt==false){
-      newtodo.todo = newtodo.todo.map(t=> {
-        t.completed = true;
-        return t
-      });
-    }
-    else {
-      newtodo.todo = newtodo.todo.map(t=> {
-      t.completed = false
-      return t});
-      }
-    switchIt =! switchIt;
-    localStorage.setItem('data', JSON.stringify(newtodo.todo))
-    newtodo.render(ul);
-  } 
-
-  selectAll.addEventListener('click',selectAllFunc);
-
-  //completed selectAll icon functionality
-
 
 
   newtodo.render(ul);
@@ -173,3 +157,4 @@ class Todos{
   }
   
   myFunction();
+  
