@@ -75,6 +75,15 @@ class Todos{
       //completed replace para with inputbox on doubleclick
 
 
+
+      //add a message if the todo list is empty
+      function emptyList(){
+        if(newtodo.todo.length !== 0) {
+          document.querySelector(".empty-todo").style.display = 'none'; 
+        }
+      }
+      emptyList(); 
+        
       //items left detailsBox
       function itemsLeftText(){
         itemsLeft.textContent = newtodo.todo.filter(t => t.completed == false).length;
