@@ -76,13 +76,3 @@ function myFunction() {
 }
 
 myFunction();
-
-//Create a counter of how many todo taks are left to be done
- 
-
-function itemsLeftText(){
-  let itemsLeft = document.querySelector(".items-left"); 
-  let li = document.getElementsByTagName('li');
-  itemsLeft.textContent = li.filter(t => t.checked == false).length;
-}
-itemsLeftText();
