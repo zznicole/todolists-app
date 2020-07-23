@@ -61,7 +61,6 @@ function myFunction() {
   filter = input.value.toUpperCase();
   ul = document.getElementById("myUL");
   li = document.getElementsByTagName('li');
- console.log(ul);
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     console.log(li[i]);
@@ -77,3 +76,13 @@ function myFunction() {
 }
 
 myFunction();
+
+//Create a counter of how many todo taks are left to be done
+ 
+
+function itemsLeftText(){
+  let itemsLeft = document.querySelector(".items-left"); 
+  let li = document.getElementsByTagName('li');
+  itemsLeft.textContent = li.filter(t => t.checked == false).length;
+}
+itemsLeftText();
