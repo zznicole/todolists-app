@@ -58,6 +58,7 @@ class Todos{
         editInput.focus();
         editInput.addEventListener('keyup',event => {
           if(event.keyCode == 13){
+            console.log(event.keyCode);
             t.name = editInput.value;
             localStorage.setItem('data', JSON.stringify(newtodo.todo))
             newtodo.render(ul);
@@ -127,7 +128,8 @@ class Todos{
   //to add a todo by enter
 
   const enterTodo = function(event){
-    if(event.keyCode == 13){
+    // max 20 todos
+    if(event.keyCode == 13 & newtodo.todo.length < 20){
       // newtodo.name = event.target.value 
       newtodo.addTodo();
       event.target.value = '';
@@ -152,9 +154,9 @@ class Todos{
     filter = input.value.toUpperCase();
     ul = document.getElementById("myUL");
     li = document.getElementsByTagName('li');
-    // Loop through all list items, and hide those who don't match the search query
+// Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
-      // fixed search issue by deleting .getElementsByTagName("li")[0] which was after li[i] on line 69
+// fixed search issue by deleting .getElementsByTagName("li")[0] which was after li[i] on line 69
       a = li[i];
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -167,13 +169,26 @@ class Todos{
   
   myFunction();
 
-// remove duplicates todos
+// remove duplicates todos regardless of case-sensitivity
 
-let todosArr = newtodo.todo.map(x => x.name.toLowerCase());
+// remove duplicates 1. it works but might cause issue to rendering, beacuse 
+// let todosArr = newtodo.todo.map(x => x.name.toLowerCase());
+// let uniqueNewToDo = removeDuplicates(todosArr);
 
-  function removeDuplicates(arr) {
-    let uniqueArr = [...new Set(arr)];
-    return uniqueArr;
-  }
+// function removeDuplicates(arr) {
+//   let uniqueArr = [...new Set(arr)];
+//   return uniqueArr;
+// }
   
-removeDuplicates(todosArr);
+
+
+// remove duplicates 2.
+// let todoArr = newtodo.todo;
+// function removeDuplicates(arr) {
+//   let uniqueArr = arr.filter((item, index) => arr.indexOf(item.name) === index.name);
+//   return uniqueArr;
+// }
+    
+// console.log(removeDuplicates(todoArr));
+
+
