@@ -15,7 +15,7 @@ function randomGen(str = 'qwertyuio') {
 
 class Todos{
   constructor(){
-    this.todo = JSON.parse(localStorage.getItem('data')) || [];
+    this.todo = [];
   }
     addTodo(){
       this.todo = this.todo.concat({
@@ -59,13 +59,11 @@ class Todos{
         editInput.addEventListener('keyup',event => {
           if(event.keyCode == 13){
             t.name = editInput.value;
-            localStorage.setItem('data', JSON.stringify(newtodo.todo))
             newtodo.render(ul);
           }
         })
         editInput.addEventListener('blur',event => {
           t.name = editInput.value;
-          localStorage.setItem('data', JSON.stringify(newtodo.todo))
           newtodo.render(ul);
         })
       }
@@ -95,7 +93,6 @@ class Todos{
       //to delete todo 
       const deleteTodo = function({target}){
         newtodo.todo = newtodo.todo.filter(t => target.dataset.key != t.id);
-        localStorage.setItem('data', JSON.stringify(newtodo.todo))
         newtodo.render(ul);
       }  
       deleteit.addEventListener('click',deleteTodo)
@@ -110,7 +107,6 @@ class Todos{
            }
            return t;
           });
-          localStorage.setItem('data', JSON.stringify(newtodo.todo))
           newtodo.render(ul);
       }
       input.addEventListener('click',toggle);
@@ -131,7 +127,6 @@ class Todos{
       // newtodo.name = event.target.value 
       newtodo.addTodo();
       event.target.value = '';
-      localStorage.setItem('data', JSON.stringify(newtodo.todo))
       newtodo.render(ul);
     }
    
