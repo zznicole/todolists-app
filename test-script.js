@@ -128,8 +128,8 @@ class Todos{
   //to add a todo by enter
 
   const enterTodo = function(event){
-    // max 20 todos
-    if(event.keyCode == 13 & newtodo.todo.length < 20){
+  // set max 20 todos
+    if(event.keyCode == 13 && newtodo.todo.length < 20){
       // newtodo.name = event.target.value 
       newtodo.addTodo();
       event.target.value = '';
@@ -169,26 +169,6 @@ class Todos{
   
   myFunction();
 
-// remove duplicates todos regardless of case-sensitivity
 
-// remove duplicates 1. it works but might cause issue to rendering, beacuse 
-// let todosArr = newtodo.todo.map(x => x.name.toLowerCase());
-// let uniqueNewToDo = removeDuplicates(todosArr);
-
-// function removeDuplicates(arr) {
-//   let uniqueArr = [...new Set(arr)];
-//   return uniqueArr;
-// }
-  
-
-
-// remove duplicates 2.
-// let todoArr = newtodo.todo;
-// function removeDuplicates(arr) {
-//   let uniqueArr = arr.filter((item, index) => arr.indexOf(item.name) === index.name);
-//   return uniqueArr;
-// }
-    
-// console.log(removeDuplicates(todoArr));
 
 
