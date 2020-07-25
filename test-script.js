@@ -128,6 +128,18 @@ class Todos{
 
   const enterTodo = function(event){
     if(event.keyCode == 13){
+//add message if the entered todo already exists.
+      // if (todoExists(mainInput.value)) {
+      //   alert('This task already exists.');
+      //   return;
+      // };
+//check if the input todo already exists, remove it if it does.
+      // checkExistence(mainInput.value) {
+      if(newtodo.todo.some(todo => todo.name == mainInput.value)) {
+      alert('This task already exists.');
+      return;
+      };
+  
       // newtodo.name = event.target.value 
       newtodo.addTodo();
       event.target.value = '';
@@ -169,11 +181,12 @@ class Todos{
 
 // remove duplicates todos
 
-let todosArr = newtodo.todo.map(x => x.name.toLowerCase());
+// let todosArr = newtodo.todo.map(x => x.name.toLowerCase());
 
-  function removeDuplicates(arr) {
-    let uniqueArr = [...new Set(arr)];
-    return uniqueArr;
-  }
+//   function removeDuplicates(arr) {
+//     let uniqueArr = [...new Set(arr)];
+//     return uniqueArr;
+//   }
   
-removeDuplicates(todosArr);
+// removeDuplicates(todosArr);
+
