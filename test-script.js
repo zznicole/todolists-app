@@ -58,6 +58,7 @@ class Todos{
         editInput.focus();
         editInput.addEventListener('keyup',event => {
           if(event.keyCode == 13){
+            console.log(event.keyCode);
             t.name = editInput.value;
             newtodo.render(ul);
           }
@@ -123,7 +124,9 @@ class Todos{
   //to add a todo by enter
 
   const enterTodo = function(event){
-    if(event.keyCode == 13){
+
+// set max 20 todos
+   if(event.keyCode == 13 && newtodo.todo.length < 20){
 //check if the input todo already exists, it will not be added to the list, but show a message.
       if(newtodo.todo.some(todo => todo.name == mainInput.value.toLowerCase())) {
       alert('This task already exists.');
@@ -153,9 +156,9 @@ class Todos{
     filter = input.value.toUpperCase();
     ul = document.getElementById("myUL");
     li = document.getElementsByTagName('li');
-    // Loop through all list items, and hide those who don't match the search query
+// Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
-      // fixed search issue by deleting .getElementsByTagName("li")[0] which was after li[i] on line 69
+// fixed search issue by deleting .getElementsByTagName("li")[0] which was after li[i] on line 69
       a = li[i];
       txtValue = a.textContent || a.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -167,6 +170,7 @@ class Todos{
   }
   
   myFunction();
+
 
 
 
