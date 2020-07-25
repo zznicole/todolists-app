@@ -125,6 +125,7 @@ class Todos{
   const enterTodo = function(event){
 
 // set max 20 todos
+//ingnore empty enter
    if(event.keyCode == 13 && newtodo.todo.length < 20 && mainInput.value !==""){
 //check if the input todo already exists, it will not be added to the list, but show a message.
       if(newtodo.todo.some(todo => todo.name == mainInput.value.toLowerCase())) {
