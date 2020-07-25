@@ -129,7 +129,7 @@ class Todos{
   const enterTodo = function(event){
     if(event.keyCode == 13){
 //check if the input todo already exists, it will not be added to the list, but show a message.
-      if(newtodo.todo.some(todo => todo.name == mainInput.value)) {
+      if(newtodo.todo.some(todo => todo.name == mainInput.value.toLowerCase())) {
       alert('This task already exists.');
       return;
       };
