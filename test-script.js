@@ -15,7 +15,7 @@ function randomGen(str = 'qwertyuio') {
 
 class Todos{
   constructor(){
-    this.todo = JSON.parse(localStorage.getItem('data')) || [];
+    this.todo = [];
   }
     addTodo(){
       this.todo = this.todo.concat({
@@ -60,13 +60,11 @@ class Todos{
           if(event.keyCode == 13){
             console.log(event.keyCode);
             t.name = editInput.value;
-            localStorage.setItem('data', JSON.stringify(newtodo.todo))
             newtodo.render(ul);
           }
         })
         editInput.addEventListener('blur',event => {
           t.name = editInput.value;
-          localStorage.setItem('data', JSON.stringify(newtodo.todo))
           newtodo.render(ul);
         })
       }
@@ -96,7 +94,6 @@ class Todos{
       //to delete todo 
       const deleteTodo = function({target}){
         newtodo.todo = newtodo.todo.filter(t => target.dataset.key != t.id);
-        localStorage.setItem('data', JSON.stringify(newtodo.todo))
         newtodo.render(ul);
       }  
       deleteit.addEventListener('click',deleteTodo)
@@ -111,7 +108,6 @@ class Todos{
            }
            return t;
           });
-          localStorage.setItem('data', JSON.stringify(newtodo.todo))
           newtodo.render(ul);
       }
       input.addEventListener('click',toggle);
@@ -128,12 +124,18 @@ class Todos{
   //to add a todo by enter
 
   const enterTodo = function(event){
-  // set max 20 todos
-    if(event.keyCode == 13 && newtodo.todo.length < 20){
+
+// set max 20 todos
+   if(event.keyCode == 13 && newtodo.todo.length < 20){
+//check if the input todo already exists, it will not be added to the list, but show a message.
+      if(newtodo.todo.some(todo => todo.name == mainInput.value.toLowerCase())) {
+      alert('This task already exists.');
+      return;
+      };
+  
       // newtodo.name = event.target.value 
       newtodo.addTodo();
       event.target.value = '';
-      localStorage.setItem('data', JSON.stringify(newtodo.todo))
       newtodo.render(ul);
     }
    
