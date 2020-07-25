@@ -99,7 +99,6 @@ class Todos{
       deleteit.addEventListener('click',deleteTodo)
       //completed delete todo
 
-
       //toggle todo
       const toggle = function({target}){
         newtodo.todo = newtodo.todo.map(t =>{
@@ -121,12 +120,12 @@ class Todos{
   let newtodo = new Todos;
 
 
-  //to add a todo by enter
+//to add a todo by enter
 
   const enterTodo = function(event){
 
 // set max 20 todos
-   if(event.keyCode == 13 && newtodo.todo.length < 20){
+   if(event.keyCode == 13 && newtodo.todo.length < 20 && mainInput.value !==""){
 //check if the input todo already exists, it will not be added to the list, but show a message.
       if(newtodo.todo.some(todo => todo.name == mainInput.value.toLowerCase())) {
       alert('This task already exists.');
@@ -143,14 +142,14 @@ class Todos{
 
   mainInput.addEventListener('keyup', enterTodo)
   
-  //completed adding todo by enter
+//completed adding todo by enter
 
 
 
   newtodo.render(ul);
 
   function myFunction() {
-    // Declare variables
+// Declare variables
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
@@ -171,6 +170,6 @@ class Todos{
   
   myFunction();
 
-
+  
 
 
