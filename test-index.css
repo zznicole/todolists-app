@@ -1,34 +1,31 @@
-
-
-body{
+body {
   font-size: 16px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.hero-text{
+.hero-text {
   font-size: 6.25rem;
   color: black;
   font-family: Helvetica, sans-serif;
-  padding: 2rem;;
+  padding: 2rem;
 }
 
-.input-container{
-    max-width: 600px;
-    width: 100%;
+.input-container {
+  max-width: 600px;
+  width: 100%;
   background: white;
   border-bottom: 1px solid lightgray;
 }
 
-.main_input{
-    
-    width: 100%;
+.main_input {
+  width: 100%;
   font-size: 1.6rem;
   line-height: 2.1rem;
   padding: 0.8rem 1rem;
@@ -37,7 +34,7 @@ body{
 }
 
 .search-box {
-    width: 100%;
+  width: 100%;
   font-size: 1.6rem;
   line-height: 2.1rem;
   padding: 0.8rem 1rem;
@@ -52,81 +49,80 @@ body{
   padding-right: 0rem;
 } */
 
-::placeholder{
+::placeholder {
   color: lightgrey;
   font-style: italic;
 }
 
-.ul{
+.ul {
   background: white;
   max-width: 600px;
-width: 100%;
+  width: 100%;
 }
 
-.li{
+.li {
   display: flex;
   justify-content: space-between;
   line-height: 2.1rem;
   font-size: 1.6rem;
   border-bottom: 1px solid lightgray;
-  color: #4D4D4D; 
+  color: #4d4d4d;
   width: 100%;
 }
 
-.deleteit{
+.deleteit {
   visibility: hidden;
   box-shadow: none;
   border: none;
   background: transparent;
-  color:black;
+  color: black;
   font-size: 1.2rem;
   outline: none;
 }
-
 
 .li:hover > .deleteit {
   visibility: visible;
 }
 
-.para-1{
+.para-1 {
   word-break: break-all;
 }
+.censortext {
+  color: red;
+}
 
-
-.status{
+.status {
   height: 1rem;
   width: 2rem;
   margin-left: 0rem;
   margin: auto 0;
 }
 
-
-.details-box{
-max-width: 600px;
-width: 100%;
-display: flex;
-background: white;
-box-sizing: border-box;
-padding: 1rem;
-justify-content: space-between;
+.details-box {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  background: white;
+  box-sizing: border-box;
+  padding: 1rem;
+  justify-content: space-between;
 }
 
-
-.editInput{
+.editInput {
   line-height: 2.1rem;
   border: none;
   outline: none;
   font-size: 1.6rem;
 }
 
-.items-text{
+.items-text {
   /* font-size: 1.2rem;
   color:rgb(187, 11, 128);*/
-  padding-right: 2rem; 
+  padding-right: 2rem;
 }
 
 .items-left {
   /* font-size: 1.2rem;
   color:rgb(187, 11, 128);*/
   padding-right: 0.4rem;
-
+}
