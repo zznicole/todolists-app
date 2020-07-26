@@ -76,12 +76,12 @@ class Todos{
 
 
       //add a message if the todo list is empty
-      function emptyList(){
-        if(newtodo.todo.length !== 0) {
-          document.querySelector(".empty-todo").style.display = 'none'; 
-        }
-      }
-      emptyList(); 
+      // function emptyList(){
+      //   if(newtodo.todo.length !== 0) {
+      //     document.querySelector(".empty-todo").style.display = 'none'; 
+      //   }
+      // }
+      // emptyList(); 
         
       //items left detailsBox
       function itemsLeftText(){
@@ -97,7 +97,8 @@ class Todos{
         newtodo.render(ul);
       }  
       deleteit.addEventListener('click',deleteTodo)
-      //completed delete todo
+
+      // //completed delete todo
 
       //toggle todo
       const toggle = function({target}){
