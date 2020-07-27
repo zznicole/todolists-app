@@ -1,5 +1,5 @@
 const mainInput = document.querySelector('.main_input');
-const ul = document.querySelector('ul')
+const ul = document.querySelector('ul');
 const itemsLeft = document.querySelector('.items-left');
 const active = document.querySelector('.active');
 const all = document.querySelector('.all');
@@ -10,10 +10,22 @@ let switchIt = false;
 
 //create an id for each todo which is how we will track each todo for completion and deletion
 function randomGen(str = 'qwertyuio') {
-  return str.split('')
-    .sort(() => Math.random() - 0.5)
-    .join('') + '_' + Math.floor(Math.random() * 1000)
+	return (
+		str
+			.split('')
+			.sort(() => Math.random() - 0.5)
+			.join('') +
+		'_' +
+		Math.floor(Math.random() * 1000)
+	);
 }
+
+
+	
+			
+
+
+
 
 class Todos{
   constructor(){
@@ -35,7 +47,11 @@ class Todos{
       li.classList.add('li');
       let p = document.createElement('p');
       p.classList.add('para-1')
-      p.textContent = t.name;
+      let badWords = t.name.replace(
+				/poop|damn|shit|fuck|motherfucker|hell/gi,
+				'🤐*censor*'
+			);
+			p.textContent = badWords;  
       let input = document.createElement('input');
       input.setAttribute('type','checkbox');
       input.checked = t.completed;
@@ -162,5 +178,3 @@ myFunction();
 //Completed search function
 
   
-
-
