@@ -87,7 +87,8 @@ body {
 .para-1 {
   word-break: break-all;
 }
-.censortext {
+
+.censor-text {
   color: red;
 }
 

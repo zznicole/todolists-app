@@ -37,6 +37,7 @@ class Todos {
 			li.classList.add('li');
 			let p = document.createElement('p');
 			p.classList.add('para-1');
+
 			let badWords = t.name.replace(
 				/poop|damn|shit|fuck|motherfucker|hell/gi,
 				'🤐*censor*'
