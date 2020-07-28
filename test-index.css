@@ -21,6 +21,7 @@ body {
 .input-container {
   max-width: 600px;
   width: 100%;
+}
 
 .input-container{
   max-width: 600px;
@@ -68,15 +69,6 @@ body {
   padding: 0 1em;
   width: 100%;
 text-align: center;
-}
-
-/* show a message if the list is empty. */
-ul:empty {
-  padding: 0;
-}
-ul:empty::after {
-   content: "Todo List is empty.";
-
 }
 
 .li {

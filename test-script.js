@@ -8,6 +8,7 @@ const selectAll = document.querySelector('.far');
 let switchIt = false;
 
 
+
 //create an id for each todo which is how we will track each todo for completion and deletion
 function randomGen(str = 'qwertyuio') {
 	return (
@@ -19,13 +20,6 @@ function randomGen(str = 'qwertyuio') {
 		Math.floor(Math.random() * 1000)
 	);
 }
-
-
-	
-			
-
-
-
 
 class Todos{
   constructor(){
@@ -41,6 +35,20 @@ class Todos{
 
 
   render(parent){
+    //show a message when list is empty
+    if(!newtodo.todo.length) {
+      document.querySelector(".emptyMessage").style.display = "none";
+    } else {
+      document.querySelector(".emptyMessage").style.display = "block";
+    }
+
+    //items left detailsBox
+    function itemsLeftText(){
+      itemsLeft.textContent = newtodo.todo.filter(t => t.completed == false).length;
+    }
+    itemsLeftText();
+    //completed items left 
+
     ul.innerHTML = '';
     this.todo.forEach(t =>{
       let li =document.createElement('li');
@@ -87,15 +95,6 @@ class Todos{
       p.addEventListener('dblclick',replaceItFunc);
       //completed replace para with inputbox on doubleclick
         
-
-      //items left detailsBox
-      function itemsLeftText(){
-        itemsLeft.textContent = newtodo.todo.filter(t => t.completed == false).length;
-      }
-      itemsLeftText();
-      //completed items left 
-
-
       //to delete todo 
       const deleteTodo = function({target}){
         newtodo.todo = newtodo.todo.filter(t => target.dataset.key != t.id);
