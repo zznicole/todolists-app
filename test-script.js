@@ -36,10 +36,8 @@ class Todos{
 
   render(parent){
     //show a message when list is empty
-    if(!newtodo.todo.length) {
+    if(newtodo.todo.length !== 0) {
       document.querySelector(".emptyMessage").style.display = "none";
-    } else {
-      document.querySelector(".emptyMessage").style.display = "block";
     }
 
     //items left detailsBox
